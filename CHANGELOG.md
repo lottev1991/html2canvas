@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file. See [standa
 - New canvas render option: `imageSmoothingEnabled` (defaults to `true`, which is standard HTML5 canvas behavior). Setting it to `false` will stop the blurring upon scaling and/or zooming the canvas. This could be desirable for things such as pixel art.
   - The same effect can be achieved by setting the `image-rendering` CSS option of the to-be-rendered DOM element to either `pixelated` or `crisp-edges`. The other options will return `true`. 
   - You don't have to set both options at the same time. It will still work fine if you do, but it's not necessary.
+  - This also fixes [niklasvh#2850](https://github.com/niklasvh/html2canvas/issues/2850).
 - Adds a function where visible child elements of hidden parent elements will be rendered upon the canvas (before, they would be hidden, which I personally consider undesirable). I did not code this feature; all credit goes to @toohtik (see [#2866](https://github.com/niklasvh/html2canvas/pull/2866)). I merely decided to implement it in my own custom fork.
 
 ### fix
