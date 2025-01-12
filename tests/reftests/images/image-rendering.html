@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>image-rendering test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../../test.js"></script>
+    <script>
+        h2cOptions = {
+            width: 90,
+            height: 90,
+            backgroundColor: null,
+        };
+    </script>
+    <style>
+        #heart {
+            top: 40px;
+            left: 40px;
+            position: absolute;
+            image-rendering: pixelated;
+            transform: scale(10);
+        }
+    </style>
+</head>
+<body>
+<img id="heart" src="img/heart.png">
+</body>
+</html>
