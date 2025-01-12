@@ -13,6 +13,7 @@ import {PAINT_ORDER_LAYER} from '../../css/property-descriptors/paint-order';
 import {TEXT_ALIGN} from '../../css/property-descriptors/text-align';
 import {TEXT_DECORATION_LINE} from '../../css/property-descriptors/text-decoration-line';
 import {TextShadow} from '../../css/property-descriptors/text-shadow';
+import {IMG_REN} from '../../css/property-descriptors/image-rendering';
 import {isDimensionToken} from '../../css/syntax/parser';
 import {asString, Color, isTransparent} from '../../css/types/color';
 import {calculateGradientDirection, calculateRadius, processColorStops} from '../../css/types/functions/gradient';
@@ -57,6 +58,7 @@ export interface RenderOptions {
     y: number;
     width: number;
     height: number;
+    imageSmoothingEnabled: true | false;
 }
 
 export class CanvasRenderer extends Renderer {
@@ -257,6 +259,14 @@ export class CanvasRenderer extends Renderer {
         });
     }
 
+    async renderQuality(): Promise<void> {
+        if (IMG_REN.PIXELATED || IMG_REN.CRISP_EDGES || this.options.imageSmoothingEnabled === false) {
+            this.ctx.imageSmoothingEnabled = false;
+        } else {
+            this.ctx.imageSmoothingEnabled = true;
+        }
+    }
+
     renderReplacedElement(
         container: ReplacedElementContainer,
         curves: BoundCurves,
@@ -280,6 +290,7 @@ export class CanvasRenderer extends Renderer {
                 );
                 this.ctx.save();
                 this.ctx.clip();
+                this.renderQuality();
                 if (isContainerWSizes) {
                     this.ctx.drawImage(
                         image,
@@ -348,11 +359,13 @@ export class CanvasRenderer extends Renderer {
                 x: 0,
                 y: 0,
                 width: container.width,
-                height: container.height
+                height: container.height,
+                imageSmoothingEnabled: this.ctx.imageSmoothingEnabled
             });
 
             const canvas = await iframeRenderer.render(container.tree);
             if (container.width && container.height) {
+                this.renderQuality();
                 this.ctx.drawImage(
                     canvas,
                     0,
@@ -458,6 +471,7 @@ export class CanvasRenderer extends Renderer {
                     const url = (img as CSSURLImage).url;
                     try {
                         image = await this.context.cache.match(url);
+                        this.renderQuality();
                         this.ctx.drawImage(image, container.bounds.left - (image.width + 10), container.bounds.top);
                     } catch (e) {
                         this.context.logger.error(`Error loading list-style-image ${url}`);
@@ -495,7 +509,10 @@ export class CanvasRenderer extends Renderer {
         }
         // https://www.w3.org/TR/css-position-3/#painting-order
         // 1. the background and borders of the element forming the stacking context.
-        await this.renderNodeBackgroundAndBorders(stack.element);
+        const styles = stack.element.container.styles;
+        if (styles.isVisible()) {
+            await this.renderNodeBackgroundAndBorders(stack.element);
+        }
         // 2. the child stacking contexts with negative stack levels (most negative first).
         for (const child of stack.negativeZIndex) {
             await this.renderStack(child);
@@ -601,6 +618,7 @@ export class CanvasRenderer extends Renderer {
         canvas.width = Math.max(1, width);
         canvas.height = Math.max(1, height);
         const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+        this.renderQuality();
         ctx.drawImage(image, 0, 0, image.width, image.height, 0, 0, width, height);
         return canvas;
     }

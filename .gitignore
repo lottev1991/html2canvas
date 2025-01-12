@@ -17,3 +17,5 @@ debug.log
 tests/reftests.js
 *.log
 .rpt2_cache
+package-lock.json
+package.json

@@ -73,6 +73,7 @@ import {webkitTextStrokeColor} from './property-descriptors/webkit-text-stroke-c
 import {webkitTextStrokeWidth} from './property-descriptors/webkit-text-stroke-width';
 import {wordBreak} from './property-descriptors/word-break';
 import {zIndex} from './property-descriptors/z-index';
+import {imageRendering} from './property-descriptors/image-rendering';
 import {CSSValue, Parser, isIdentToken} from './syntax/parser';
 import {Tokenizer} from './syntax/tokenizer';
 import {angle} from './types/angle';
@@ -117,6 +118,7 @@ export class CSSParsedDeclaration {
     fontStyle: ReturnType<typeof fontStyle.parse>;
     fontVariant: ReturnType<typeof fontVariant.parse>;
     fontWeight: ReturnType<typeof fontWeight.parse>;
+    imageRendering: ReturnType<typeof imageRendering.parse>;
     letterSpacing: ReturnType<typeof letterSpacing.parse>;
     lineBreak: ReturnType<typeof lineBreak.parse>;
     lineHeight: CSSValue;
@@ -186,6 +188,7 @@ export class CSSParsedDeclaration {
         this.fontStyle = parse(context, fontStyle, declaration.fontStyle);
         this.fontVariant = parse(context, fontVariant, declaration.fontVariant);
         this.fontWeight = parse(context, fontWeight, declaration.fontWeight);
+        this.imageRendering = parse(context, imageRendering, declaration.imageRendering);
         this.letterSpacing = parse(context, letterSpacing, declaration.letterSpacing);
         this.lineBreak = parse(context, lineBreak, declaration.lineBreak);
         this.lineHeight = parse(context, lineHeight, declaration.lineHeight);
@@ -233,6 +236,10 @@ export class CSSParsedDeclaration {
 
     isVisible(): boolean {
         return this.display > 0 && this.opacity > 0 && this.visibility === VISIBILITY.VISIBLE;
+    }
+
+    isChildVisible(): boolean {
+        return this.display > 0 && this.opacity > 0;
     }
 
     isTransparent(): boolean {
