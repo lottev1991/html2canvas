@@ -58,7 +58,6 @@
         "@typescript-eslint/parser": "^6.5.0",
         "appium-ios-simulator": "^5.2.2",
         "base64-arraybuffer": "1.0.2",
-        "browserslist": "^3.2.0",
         "cors": "^2.8.5",
         "es6-promise": "^4.2.8",
         "eslint": "^8.48.0",
@@ -75,6 +74,7 @@
         "jquery": "^3.7.1",
         "js-polyfills": "^0.1.43",
         "karma": "^6.4.2",
+        "browserslist": "^3.2.0",
         "karma-edge-launcher": "^0.4.2",
         "karma-firefox-launcher": "^2.1.2",
         "karma-ie-launcher": "^1.0.0",
@@ -121,7 +121,6 @@
     },
     "license": "MIT",
     "dependencies": {
-        "@html2canvas/html2canvas": "^1.6.3",
         "css-line-break": "^2.1.0",
         "text-segmentation": "^1.0.3"
     }
