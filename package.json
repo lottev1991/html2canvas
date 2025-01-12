@@ -6,7 +6,7 @@
     "module": "dist/html2canvas.esm.js",
     "typings": "dist/types/src/index.d.ts",
     "browser": "dist/html2canvas.js",
-    "version": "1.6.3",
+    "version": "1.6.4-custom",
     "keywords": [
         "typescript",
         "html",
@@ -28,6 +28,11 @@
             "email": "dev@cantoo.fr",
             "name": "Cantoo",
             "url": "https://cantoo.fr"
+        },
+        {
+            "email": "lottevmusic@outlook.com",
+            "name": "Lotte V",
+            "url": "https://lottev.moe"
         }
     ],
     "engines": {

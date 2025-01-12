@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.4-custom](https://github.com/html2canvas/html2canvas/compare/v1.6.3...v1.6.4-custom) (2024-01-12)
+
+### feat
+- New canvas render option: `imageSmoothingEnabled` (defaults to `true`, which is standard HTML5 canvas behavior). Setting it to `false` will stop the blurring upon scaling and/or zooming the canvas. This could be desirable for things such as pixel art.
+  - The same effect can be achieved by setting the `image-rendering` CSS option of the to-be-rendered DOM element to either `pixelated` or `crisp-edges`. The other options will return `true`. 
+  - You don't have to set both options at the same time. It will still work fine if you do, but it's not necessary.
+- Adds a function where visible child elements of hidden parent elements will be rendered upon the canvas (before, they would be hidden, which I personally consider undesirable). I did not code this feature; all credit goes to @toohtik (see [#2866](https://github.com/niklasvh/html2canvas/pull/2866)). I merely decided to implement it in my own custom fork.
+
+### fix
+- Reverts [4e6c022](https://github.com/lottev1991/html2canvas/commit/4e6c022b3edd5a591f7d8ff6784d7bec9458609b), since while it may fix iframe element rendering, it also completely messes up the cropping function of html2canvas by moving child elements all over the place. I'm not currently prioritizing iframes in any of my projects, so I'm reverting it for now. That being said, I'm willing to re-implement it if a better fix is ever found.
+
 ## [1.6.3](https://github.com/html2canvas/html2canvas/compare/v1.6.2...v1.6.3) (2024-07-18)
 
 ### fix
