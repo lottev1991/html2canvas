@@ -25,7 +25,7 @@ Explain the **motivation** for making this change. What existing problem does th
 
 **Test plan (required)**
 
-Demonstrate how the issue/feature can be replicated. For most cases, simply adding an appropriate html/css template into the [reftests](https://github.com/html2canvas/html2canvas/tree/master/tests/reftests) should be sufficient. Please see other tests there for reference.
+Demonstrate how the issue/feature can be replicated. For most cases, simply adding an appropriate html/css template into the [reftests](https://github.com/lottev1991/html2canvas/tree/master/tests/reftests) should be sufficient. Please see other tests there for reference.
 
 **Code formatting**
 

@@ -1,12 +1,12 @@
 # html2canvas
 
-This project is a fork of [niklasvh/html2canvas](https://github.com/niklasvh/html2canvas).
+This project is a fork of [niklasvh/html2canvas](https://github.com/niklasvh/html2canvas). This fork in turn was based on [another fork](https://github.com/html2canvas/html2canvas).
 
-[Homepage](https://html2canvas.github.io/html2canvas) | [Downloads](https://github.com/html2canvas/html2canvas/releases) | [Questions](https://github.com/html2canvas/html2canvas/discussions/categories/q-a)
+[Downloads](https://github.com/lottev1991/html2canvas/releases) | [Questions](https://github.com/lottev1991/html2canvas/discussions/categories/q-a)
 
-![CI](https://github.com/html2canvas/html2canvas/workflows/CI/badge.svg?branch=master)
-[![NPM Downloads](https://img.shields.io/npm/dm/@html2canvas/html2canvas.svg)](https://www.npmjs.org/package/@html2canvas/html2canvas)
-[![NPM Version](https://img.shields.io/npm/v/@html2canvas/html2canvas.svg)](https://www.npmjs.org/package/@html2canvas/html2canvas)
+![CI](https://github.com/lottev1991/html2canvas/workflows/CI/badge.svg?branch=master)
+[![NPM Downloads](https://img.shields.io/npm/dm/@lottev1991/html2canvas.svg)](https://www.npmjs.org/package/@lottev1991/html2canvas)
+[![NPM Version](https://img.shields.io/npm/v/@lottev1991/html2canvas.svg)](https://www.npmjs.org/package/@lottev1991/html2canvas)
 
 #### JavaScript HTML renderer
 
@@ -36,9 +36,7 @@ As each CSS property needs to be manually built to be supported, there are a num
 ### Install
 
 ```shell
-pnpm add @html2canvas/html2canvas
-# yarn add @html2canvas/html2canvas
-# npm i @html2canvas/html2canvas
+npm i @lottev1991/html2canvas
 ```
 
 ### Usage
@@ -75,12 +73,12 @@ document.body.appendChild(canvas);
 
 ### Building
 
-You can download ready builds [here](https://github.com/html2canvas/html2canvas/releases).
+You can download ready builds [here](https://github.com/lottev1991/html2canvas/releases).
 
 Clone git repository:
 
 ```shell
-git clone git://github.com/html2canvas/html2canvas.git
+git clone git://github.com/lottev1991/html2canvas.git
 ```
 
 Install dependencies:

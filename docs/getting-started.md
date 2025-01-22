@@ -13,7 +13,7 @@ You can install `html2canvas` through npm or [download a built release](https://
 
 ### npm
 
-    npm install @html2canvas/html2canvas
+    npm install @lottev1991/html2canvas
 
 ```javascript
 import html2canvas from 'html2canvas';

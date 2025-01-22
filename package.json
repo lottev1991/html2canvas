@@ -1,6 +1,6 @@
 {
     "title": "html2canvas",
-    "name": "@html2canvas/html2canvas",
+    "name": "@lottev1991/html2canvas",
     "description": "Screenshots with JavaScript",
     "main": "dist/html2canvas.min.js",
     "module": "dist/html2canvas.esm.js",
@@ -13,25 +13,21 @@
         "canvas",
         "html2canvas"
     ],
-    "author": {
-        "name": "Niklas von Hertzen",
-        "email": "niklasvh@gmail.com",
-        "url": "https://hertzen.com"
-    },
+    "author": "Niklas von Hertzen <niklasvh@gmail.com> (https://hertzen.com)",
     "contributors": [
         {
-            "email": "zefling@ikilote.net",
             "name": "Zéfling",
+            "email": "zefling@ikilote.net",
             "url": "https://git.ikilote.net/Zefling"
         },
         {
-            "email": "dev@cantoo.fr",
             "name": "Cantoo",
+            "email": "dev@cantoo.fr",
             "url": "https://cantoo.fr"
         },
         {
-            "email": "lottevmusic@outlook.com",
             "name": "Lotte V",
+            "email": "lottevmusic@outlook.com",
             "url": "https://lottev.moe"
         }
     ],
@@ -40,10 +36,10 @@
     },
     "repository": {
         "type": "git",
-        "url": "git@github.com:html2canvas/html2canvas.git"
+        "url": "git+ssh://git@github.com/lottev1991/html2canvas.git"
     },
     "bugs": {
-        "url": "https://github.com/html2canvas/html2canvas/issues"
+        "url": "https://github.com/lottev1991/html2canvas/issues"
     },
     "publishConfig": {
         "registry": "https://registry.npmjs.org",
@@ -128,6 +124,13 @@
     "dependencies": {
         "@html2canvas/html2canvas": "^1.6.3",
         "css-line-break": "^2.1.0",
+        "html2canvas": "^1.4.1",
         "text-segmentation": "^1.0.3"
-    }
+    },
+    "directories": {
+        "doc": "docs",
+        "example": "examples",
+        "test": "tests"
+    },
+    "homepage": "https://github.com/lottev1991/html2canvas#readme"
 }
