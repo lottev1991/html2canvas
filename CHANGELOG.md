@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [1.6.4-custom](https://github.com/html2canvas/html2canvas/compare/v1.6.3...v1.6.4-custom) (2024-01-12)
+## [1.6.5-custom](https://github.com/html2canvas/html2canvas/compare/v1.6.3...v1.6.5-custom) (2024-01-12)
 
 ### feat
 - New canvas render option: `imageSmoothingEnabled` (defaults to `true`, which is standard HTML5 canvas behavior). Setting it to `false` will stop the blurring upon scaling and/or zooming the canvas. This could be desirable for things such as pixel art.
