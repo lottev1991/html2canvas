@@ -1,0 +1,7 @@
+/*!
+ * /*!
+ *  * html2canvas 1.6.5-custom <https://github.com/lottev1991/html2canvas#readme>
+ *  * Copyright (c) 2025 undefined <undefined>
+ *  * Released under MIT License
+ *  * /
+ */
